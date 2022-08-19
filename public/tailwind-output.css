@@ -130,7 +130,7 @@ body {
   .guestSpeakers {
     display: grid;
     padding: 2% 0%;
-    grid-template-columns: 1fr 1fr  ;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
   }
 
