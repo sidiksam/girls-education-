@@ -73,7 +73,7 @@ Object.keys(guests).forEach((guest) => {
   if (Object.hasOwnProperty.call(guests, guest)) {
     const speaker = guests[guest];
     guestsection.innerHTML += `
-        <li class="w-full flex justify-around mobile-speakers">
+        <li class="w-full flex md:space-x-5 justify-around mobile-speakers">
         <div class="speakerImg w-44 h-40 relative">
           <img class="checkers" src='${speaker.checkersImage}' alt=${speaker.about}/>
           <img class="speakers" src='${speaker.guestdImage}' alt=${speaker.about}/>
