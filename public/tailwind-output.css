@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("http://fonts.cdnfonts.com/css/cocogoose");
+
+body {
+  background: white;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-family: "COCOGOOSE", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.campaign {
+  border: 3px solid #ec5242;
+  padding: 8px;
+}
+
+.hamburgerMenu {
+  display: block;
+  cursor: pointer;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #d2d3d3;
+}
+
+.hamburgerMenu.active .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerMenu.active .hamburgerLine:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburgerMenu.active .hamburgerLine:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.ulMenu {
+  position: fixed;
+  left: -100%;
+  top: -0.8rem;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 102vh;
+  padding-top: 60px;
+  flex-direction: column;
+  background-color: #272a31;
+  transition: 0.3s;
+  box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  background-size: cover;
+  text-align: start;
+  padding-left: 30px;
+  z-index: 15;
+}
+
+.hamburgerMenu.active {
+  z-index: 16;
+  position: fixed;
+}
+
+.ulMenu.active {
+  left: 0;
+}
+
+.liLink {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #d2d3d3;
+}
+
+.liItem {
+  margin: 2.5rem 0;
+  border-bottom: #ec5242 solid 1px;
+  width: 90%;
+}
+
+.backImage {
+  background: url("../images/backImg.png");
+  background-repeat: no-repeat;
+  display: flex;
+  height: calc(100vh - 50px);
+  width: 100%;
+  background-size: cover;
+}
+
+.mainBackground {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/main-background.svg");
+  margin: 0 auto;
+  background-size: cover;
+  height: 80%;
+  gap: 10px;
+  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.lecture {
+  background-color: rgba(253, 251, 251, 0.062);
+}
+
+@media screen and (min-width: 768px) {
+  .campaign {
+    display: flex;
+  }
+}
+
+/* start */
+
+@media screen and (min-width: 100px) {
+  .guestSpeakers {
+    display: grid;
+    padding: 2% 0%;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .speakerImg {
+    width: 150px;
+    height: 100px;
+    position: relative;
+  }
+
+  .speakerImg .checkers {
+    width: 90px;
+    height: 80px;
+    margin: -17px 0 -15px -12px;
+    position: absolute;
+  }
+
+  .speakerImg .speakers {
+    position: absolute;
+    object-fit: cover;
+  }
+
+  .speaker-more {
+    display: none;
+  }
+}
+
+/* for almost larger screens like small laptops */
+@media screen and (max-width: 1280px) {
+  .speaker-more {
+    display: none;
+  }
+}
+
+/* tablets and large mobile phones */
+@media screen and (max-width: 768px) {
+  .guestSpeakers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-width: 80%;
+    padding: 2%;
+  }
+
+  .speakers {
+    max-width: 90%;
+    height: 150px;
+    gap: 5px;
+  }
+
+  .speakerImg {
+    max-width: 50%;
+  }
+
+  .speakerAbt {
+    width: 55%;
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .speakers h6 {
+    font-size: 11px;
+    max-width: 100%;
+  }
+
+  .speakers p {
+    font-size: 10px;
+    max-width: 100%;
+  }
+
+  .speakers-main-wrap.mobile .speaker-more {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    color: #2e3033;
+    justify-content: center;
+    border: white 1.5px solid;
+    padding: 2px;
+    border-radius: 2px;
+    line-height: 50px;
+    margin: 0 auto;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .show1 img {
+    width: 10px;
+    margin-left: 5px;
+    height: 10px;
+  }
+}
+
+/* for smaller screens phone and mobiles */
+@media screen and (max-width: 420px) {
+  .speakers {
+    max-width: 80%;
+    height: 120px;
+    gap: 5px;
+  }
+
+  .speakerAbt {
+    width: 100%;
+    gap: 2px;
+    display: flex;
+    min-height: 120px;
+    flex-direction: column;
+    margin-right: -70px;
+  }
+
+  .speakerAbt p {
+    font-size: 11px;
+  }
+}
